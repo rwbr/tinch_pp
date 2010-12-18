@@ -13,5 +13,5 @@ install(FILES
     node.h
     rpc.h
     type_makers.h
-  DESTINATION ${CMAKE_PROJECT_NAME}-${CPACK_PACKAGE_VERSION}/tinch_pp
+  DESTINATION /usr/local/include/${CMAKE_PROJECT_NAME}
   )

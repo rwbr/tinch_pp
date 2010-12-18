@@ -33,10 +33,11 @@ include_directories(${CMAKE_SOURCE_DIR} ${Boost_INCLUDE_DIRS})
 add_library(tinch++ ${CPP_SOURCE})
 
 install(TARGETS tinch++ 
-  DESTINATION ${CMAKE_PROJECT_NAME}-${CPACK_PACKAGE_VERSION}/lib )
+  	DESTINATION /usr/local/lib 
+)
 
 file(GLOB HEADER_FILES *.h)
 install(FILES 
-    ${HEADER_FILES}
-  DESTINATION ${CMAKE_PROJECT_NAME}-${CPACK_PACKAGE_VERSION}/impl
-  )
+	${HEADER_FILES}
+  	DESTINATION /usr/local/include/${CMAKE_PROJECT_NAME}
+)

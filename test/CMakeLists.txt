@@ -1,8 +1,8 @@
 set(CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR})
 include(Erlang)
 
-option(BUILD_TEST "Build test applications" ON)
-option(INSTALL_TEST "Install test applications" ON)
+option(BUILD_TEST "Build test applications" OFF)
+option(INSTALL_TEST "Install test applications" OFF)
 
 if(BUILD_TEST)
   SET(Boost_ADDITIONAL_VERSIONS "1.42" "1.42.0")
@@ -75,13 +75,13 @@ if(BUILD_TEST)
 
   if(INSTALL_TEST)
     install(TARGETS net_kernel_sim patterns rpc_test thread_safe_queue chat_client patterns_testing_any patterns_testing_assign local_link remote_link mbox_same_node_links
-      DESTINATION ${CMAKE_PROJECT_NAME}-${CPACK_PACKAGE_VERSION}/test )
+      DESTINATION ${CMAKE_PROJECT_NAME}/test )
 
     if(ERLANG_OUTPUT_FILES)
       install(
 	FILES 
 	  ${ERLANG_OUTPUT_FILES}
-	DESTINATION ${CMAKE_PROJECT_NAME}-${CPACK_PACKAGE_VERSION}/test )
+	DESTINATION ${CMAKE_PROJECT_NAME}/test )
     endif(ERLANG_OUTPUT_FILES)
   endif(INSTALL_TEST)
 endif(BUILD_TEST)
