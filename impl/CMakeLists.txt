@@ -39,5 +39,5 @@ install(TARGETS tinch++
 file(GLOB HEADER_FILES *.h)
 install(FILES 
 	${HEADER_FILES}
-  	DESTINATION /usr/local/include/${CMAKE_PROJECT_NAME}
+  	DESTINATION /usr/local/include/${CMAKE_PROJECT_NAME}/impl
 )
